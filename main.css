@@ -1,0 +1,37 @@
+body {
+    background-color: darkgray;
+}
+.nav-wrapper {
+    background-color: white;
+    height: 15px;
+
+}
+a.brand-logo {
+    font-size: 20px;
+    color: white;
+    align-self: auto;
+    padding: .5em;
+}
+
+
+h1 {
+    padding: 1em;
+    border: 2px white;
+    border-style: solid;
+    text-align: center;
+    font-size: 60px;
+    color: white;
+}
+h2 {
+    text-align: center;
+    color: white;
+}
+h3 {
+    color: white;
+  
+}
+
+
+
+
+    
