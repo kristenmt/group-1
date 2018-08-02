@@ -15,20 +15,23 @@ var db = firebase.database();
 
 function userPricePref () {
     // grabs user price choice 
-    var newUserPricePref = $(".class").val();
+    var newUserPricePref = $(".price-choice").val();
     // creates local "temporary" object for holding new user price preference
     var newUserPricePref = {
         userPricePref: newUserPricePref,
     }
     // upload user price preference to the database
+    db.ref().push(newUserPricePref);
 }
 
 
 function userDistancePref () {
     // grabs user distance choice
-    var userDistancePref = $(".class").val();
+    var userDistancePref = $(".distance-choice").val();
     // creates local "temporary" object for holding new user price preference
     var newUserDistancePref = {
         userDistancePref: newUserDistancePref,
     }
+    // upload user price preference to the database
+    db.ref().push(newUserDistancePref);
 }
