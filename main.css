@@ -13,7 +13,9 @@ a.brand-logo {
     padding: .5em;
 }
 
-
+a.brand-logo {
+    color: black;
+}
 h1 {
     padding: 1em;
     border: 2px white;
@@ -30,6 +32,28 @@ h3 {
     color: white;
   
 }
+/*home page buttons*/
+.btn-floating.btn-large {
+    width: 100px;
+    height: 100px;
+}
+/*price page buttons*/
+.btn-floating.btn-medium {
+    width: 80px;
+    height: 80px;
+}
+/*distance page buttons*/
+.btn-floating.btn-small {
+    width: 80px;
+    height: 80px;
+}
+
+/*results page buttons*/
+.btn-floating.btn-xlarge {
+    width: 80px;
+    height: 80px;
+}
+
 
 
 
