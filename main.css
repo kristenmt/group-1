@@ -16,20 +16,24 @@ a.brand-logo {
 a.brand-logo {
     color: black;
 }
+
 h1 {
     padding: 1em;
     border: 2px white;
     border-style: solid;
-    text-align: center;
+    /* text-align: center; */
     font-size: 60px;
     color: white;
+    font-family: 'Anton', sans-serif;
 }
 h2 {
-    text-align: center;
+    /* text-align: center; */
     color: white;
+    font-family: 'Quicksand', sans-serif;
 }
 h3 {
     color: white;
+    font-family: 'Quicksand', sans-serif;
   
 }
 /*home page buttons*/
@@ -56,6 +60,13 @@ h3 {
 
 
 
+
+
+
+
+
+
+    
 
 
     
