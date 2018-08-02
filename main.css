@@ -1,0 +1,72 @@
+body {
+    background-color: darkgray;
+}
+.nav-wrapper {
+    background-color: white;
+    height: 15px;
+
+}
+a.brand-logo {
+    font-size: 20px;
+    color: white;
+    align-self: auto;
+    padding: .5em;
+}
+
+a.brand-logo {
+    color: black;
+}
+
+h1 {
+    padding: 1em;
+    border: 2px white;
+    border-style: solid;
+    /* text-align: center; */
+    font-size: 60px;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+h2 {
+    /* text-align: center; */
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+h3 {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+  
+}
+/*home page buttons*/
+.btn-floating.btn-large {
+    width: 100px;
+    height: 100px;
+}
+/*price page buttons*/
+.btn-floating.btn-medium {
+    width: 80px;
+    height: 80px;
+}
+/*distance page buttons*/
+.btn-floating.btn-small {
+    width: 80px;
+    height: 80px;
+}
+
+/*results page buttons*/
+.btn-floating.btn-xlarge {
+    width: 80px;
+    height: 80px;
+}
+
+
+
+
+
+
+
+
+
+    
+
+
+    
