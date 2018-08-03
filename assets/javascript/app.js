@@ -20,6 +20,7 @@ $(document).ready(function () {
     var userLng = [];
     var userPricePrefChoice = [];
     var userDistancePrefChoice = 32187;
+    var randArray = [];
     function userCuisine(e) {
         e.preventDefault();
         var newUserCuisine = $(this).attr("value");
@@ -95,7 +96,15 @@ $(document).ready(function () {
             method: "GET",
         }).then(function (response) {
             console.log(response);
+            ///======push our respone into an array select from 
+            randArray.push(response.results) 
+            console.log(randArray);
+            //======= function to go through the array and select a random result
+            var randNumb = Math.floor((Math.random() * response.results.length) + 1);
+            console.log(randNumb);
+            console.log(response.results[randNumb]);
         });
+
     }
     $(".btn-large").on("click", function () {
         // $("#cuisine-choice-div").hide();
