@@ -4,23 +4,28 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Price Range</title>
+    <title>Home Page</title>
+
     <!--Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--Materialize Link-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.0/dist/mini-default.min.css">
-
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
     <!--CSS Link-->
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Quicksand" rel="stylesheet">
-    <!--JavaScript Link-->
-    <script src="main.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
 
 </head>
 
@@ -50,16 +55,17 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-5 col-lg-12">
-                    <a class="btn-floating btn-medium waves-effect waves-light red">
+                    <!-- assigned data value of 0 to first price range button bc google places api uses value ranges from 0(most affordable) to 4(most expensive) -->
+                    <a class="btn-floating btn-medium waves-effect waves-light red" value=1>
                         <i class="material-icons">$</i>
                     </a>
-                    <a class="btn-floating btn-medium waves-effect waves-light red">
+                    <a class="btn-floating btn-medium waves-effect waves-light red" value=2>
                         <i class="material-icons">$$</i>
                     </a>
-                    <a class="btn-floating btn-medium waves-effect waves-light red">
+                    <a class="btn-floating btn-medium waves-effect waves-light red" value=3>
                         <i class="material-icons">$$$</i>
                     </a>
-                    <a class="btn-floating btn-medium waves-effect waves-light red">
+                    <a class="btn-floating btn-medium waves-effect waves-light red" value=4>
                         <i class="material-icons">No Limit!</i>
                     </a>
 
@@ -77,16 +83,17 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-12">
-                    <a class="btn-floating btn-small waves-effect waves-light red">
-                        <i class="material-icons">1mile</i>
+                    <a class="btn-floating btn-small waves-effect waves-light red" value=8047>
+                        <i class="material-icons">5 miles</i>
                     </a>
-                    <a class="btn-floating btn-small waves-effect waves-light red">
-                        <i class="material-icons">5miles</i>
+                    <a class="btn-floating btn-small waves-effect waves-light red" value=16093>
+                        <i class="material-icons">10 miles</i>
                     </a>
-                    <a class="btn-floating btn-small waves-effect waves-light red">
-                        <i class="material-icons">10miles</i>
+                    <a class="btn-floating btn-small waves-effect waves-light red" value=32187>
+                        <i class="material-icons">20 miles</i>
                     </a>
-                    <a class="btn-floating btn-medium waves-effect waves-light red">
+                    <!-- had to change class to btn-small to prevent conflict from btn-medium -->
+                    <a class="btn-floating btn-small waves-effect waves-light red" value=160934>
                         <i class="material-icons">No Limit!</i>
                     </a>
                    
@@ -95,6 +102,10 @@
             </div>
 
         </div>
+
+        <!-- JavaScript  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
 
 </body>
 
