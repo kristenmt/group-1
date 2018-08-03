@@ -1,0 +1,96 @@
+body {
+    /* background-color: #23346B; */
+    background-image: url(../images/blue_wash_wall.png);
+}
+nav {
+    /* background-color: #F5EFD7; */
+    background-color: white;
+    height: 75px;
+
+}
+nav a.brand-logo {
+    color: #CFDD51;
+    font-size: 1.7em;
+}
+a.brand-logo {
+    font-size: 20px;
+    color: #CFDD51;
+    align-self: auto;
+    padding: .5em;
+    /* text-shadow: 1px 1px 6px gray; */
+    font-family: 'Righteous', cursive;
+}
+li a.nav-btn {
+    color: #B81F67;
+    /* text-shadow: 1px 1px 2px gray; */
+    font-family: 'Righteous', cursive;
+    font-size: 1.3em;
+    padding: .5em;
+}
+a li{
+    color: white;
+}
+h1 {
+    padding: .5em;
+    /* border: 2px solid #B81F67; */
+    text-align: center;
+    font-size: 2.9em;
+    color: #CFDD51;
+    font-family: 'Quicksand', sans-serif;
+}
+#header{
+    border-bottom: 3px solid #B81F67;
+    margin-bottom: 2.2em;
+}
+
+/* 
+font-family: 'Roboto', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif; */
+h2 {
+    /* text-align: center; */
+    color: #CFDD51;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.2em;
+    text-align: center;
+}
+h3 {
+    color: #CFDD51;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.2em;
+    text-align: center;
+}
+/*home page buttons*/
+.btn-floating.btn-large {
+    width: 100px;
+    height: 100px;
+}
+/*price page buttons*/
+.btn-floating.btn-medium {
+    width: 80px;
+    height: 80px;
+}
+/*distance page buttons*/
+.btn-floating.btn-small {
+    width: 80px;
+    height: 80px;
+}
+
+/*results page buttons*/
+.btn-floating.btn-xlarge {
+    width: 80px;
+    height: 80px;
+}
+
+
+
+
+
+
+
+
+
+    
+
+
+    
