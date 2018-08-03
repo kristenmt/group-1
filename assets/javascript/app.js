@@ -86,7 +86,7 @@ $(document).ready(function () {
         var proxy = "https://cors-anywhere.herokuapp.com/";
         //var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
         // var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.5383,81.3792&radius=160000&type=restaurant&keyword=" + userCuisineChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU"
-        var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,opening_hours,rating,price_level&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
+        var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,opening_hours,rating,price_level=1&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
         // console.log("this is you cuisine choice: " + userCuisineChoice);
         // console.log("this is the user price range: " + userPricePrefChoice);
         // console.log("this is the user distance preference: " + userDistancePrefChoice + " in meters (place api uses meters as length parameter)");
