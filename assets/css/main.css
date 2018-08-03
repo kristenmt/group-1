@@ -55,24 +55,24 @@ h3 {
     height: 100px;
 }
 .brand-logo:focus{
-        background-color: black;
-        color: white;
-}
-.brand-logo:hover{
     background-color: black;
     color: white;
 }
+.brand-logo:hover{
+background-color: black;
+color: white;
+}
 .brand-logo:active{
-    color: white;
+color: white;
 }
 .brand-logo{
-    color: white;
+color: white;
 }
 nav a{
-    color: white;
+color: white;
 }
 nav .brand-logo{
-    color: white;
+color: white;
 }
 /*price page buttons*/
 .btn-floating.btn-medium {
