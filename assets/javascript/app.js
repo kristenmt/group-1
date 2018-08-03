@@ -15,14 +15,35 @@ $(document).ready(function(){
     
     // Assign the reference to the database to a variable named 'db'
     var db = firebase.database();
-    
+
+    // global variables 
+    var userCuisineChoice = [];
+    var userPricePrefChoice = [];
+    var userDistancePrefChoice = [];
+
+    function userCuisine(e) {
+        e.preventDefault();
+
+        var newUserCuisine = $(this).attr("value");
+
+        userCuisineChoice.push(newUserCuisine);
+
+        console.log("this is you cuisine choice: " + userCuisineChoice);
+        console.log("this is the user price range: " + userPricePrefChoice);
+        console.log("this is the user distance preference: " + userDistancePrefChoice + " in meters (place api uses meters as length parameter)");
+    }
     function userPricePref (e) {
         e.preventDefault();
         // grabs user price choice 
         var newUserPricePref = $(this).attr("value");
+
+        // Object.freeze(newUserPricePref);
+
+        // push to global variable
+        userPricePrefChoice.push(newUserPricePref);
        
         // creates local "temporary" object for holding new user price preference
-        console.log("this is the user price range: " + newUserPricePref);
+        console.log("this is the user price range: " + userPricePrefChoice);
         // var newUserPricePref = {
         //     userPricePref: newUserPricePref,
         // }
@@ -31,18 +52,41 @@ $(document).ready(function(){
     }
     
     
-    function userDistancePref () {
+    function userDistancePref (e) {
+        e.preventDefault();
         // grabs user distance choice
-        var userDistancePref = $(this).attr("value");
-        console.log("this is the user distance preference: " + userDistancePref + " in meters (place api uses meters as length parameter)");
-        // creates local "temporary" object for holding new user price preference
-        // var newUserDistancePref = {
-        //     userDistancePref: newUserDistancePref,
-        // }
-        // // upload user price preference to the database
-        // db.ref().push(newUserDistancePref);
+        var newUserDistancePrefChoice = $(this).attr("value");
+
+        userDistancePrefChoice.push(newUserDistancePrefChoice);
+
+        console.log("this is the user distance preference: " + userDistancePrefChoice + " in meters (place api uses meters as length parameter)");
+       
     }
 
+    function diningSuggestion(e) {
+        e.preventDefault();
+        //console.log(childSnapshot.val());
+
+        //proxy server to avoid CORS Error
+        var proxy = "https://cors-anywhere.herokuapp.com/";
+        //var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
+        var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?&locationbias=circle:@28.5383°, 81.3792°" + "&radius=" + userDistancePrefChoice + "&type=restaurant&keyword=" + userCuisineChoice + "&price_level=" + userPricePrefChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
+
+        console.log("this is you cuisine choice: " + userCuisineChoice);
+        console.log("this is the user price range: " + userPricePrefChoice);
+        console.log("this is the user distance preference: " + userDistancePrefChoice + " in meters (place api uses meters as length parameter)");
+
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function (response) {
+            // console.log(response);
+        });
+    }
+
+    $(".btn-large").on("click", userCuisine);
     $(".btn-medium").on("click", userPricePref);
     $(".btn-small").on("click", userDistancePref);
+    $(".btn-xlarge").on("click", diningSuggestion);
+
 });
