@@ -45,22 +45,27 @@ h3 {
     color: white;
     font-family: 'Anton', sans-serif;
     text-align: center;
+    text-shadow: 2px 2px 2px gray;
   
 }
 /*home page buttons*/
 .btn-floating.btn-large {
+    position: relative;
     width: 100px;
     height: 100px;
 }
 
 /*price page buttons*/
 .btn-floating.btn-medium {
+    position: relative;
+    z-index: 1;
     width: 80px;
     height: 80px;
    
 }
 /*distance page buttons*/
 .btn-floating.btn-small {
+    position: relative;
     width: 80px;
     height: 80px;
 }
@@ -70,10 +75,20 @@ h3 {
     width: 80px;
     height: 80px;
 }
-.material-icons {
-   text-shadow: 1px 1px 2px lightgray;
-   color: white;
+
+b {
+    text-align: center;
 }
+.material-icons {
+   text-shadow: 1px 1px 2px black;
+   color: white;
+   position: absolute;
+   z-index: 88;
+   padding: 1.3em;
+   margin-bottom: 10em;
+   
+}
+
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
