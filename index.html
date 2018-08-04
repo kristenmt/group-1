@@ -5,35 +5,26 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home Page</title>
-
     <!--Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!--Materialize Link-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.0/dist/mini-default.min.css">
-
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
     <!--CSS Link-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Quicksand" rel="stylesheet">
-
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">FOOD FIGHTERS</a>
-
+            <a href="index.html" class="brand-logo white-text">Random Restaurant</a>
         </div>
     </nav>
     <!--First page showing-->
@@ -41,9 +32,7 @@
         <div id="first page">
             <div class="row">
                 <div id="header" class="col-lg-12">
-
-                    <h1>WHAT ARE YOU IN THE MOOD FOR?</h1>
-
+                    <h1>WHAT IS SHE IN THE MOOD FOR?</h1>
                 </div>
             </div>
             <div class="row">
@@ -53,53 +42,46 @@
                         <input type="text" pattern="[0-9]{5}" id="zip" name="zip" />
                     </form>
                 </div>
-                <div class="col-sm-12 col-md-5 col-lg-12">
-
-                    <a class="btn-floating btn-large waves-effect waves-light red" value="American">American
-                        <img src="assets/images/american food 1.jpg">
-                    </a>
-                    <b class="material-icons">AMERICAN</b>
-                    &nbsp
-
-                    <a class="btn-floating btn-large waves-effect waves-light red" value="Breakfast">Breakfast
-                        <img src="assets/images/breakfast food 1.jpg">
-                    </a>
-                    <b class="material-icons">BREAKFAST</b>
-                    &nbsp
-
-                    <a class="btn-floating btn-large waves-effect waves-light red" value="Chinese">Chinese
-                        <img src="assets/images/chinese food 1.jpg">
-                    </a>
-                    <b class="material-icons">CHINESE</b>
-                    &nbsp
-
-                    <a class="btn-floating btn-large waves-effect waves-light red" value="Mexican">Mexican
-                        <img src="assets/images/taco food 1.jpg">
-                    </a>
-                    <b class="material-icons">SPANISH</b>
-                    &nbsp
-
-                    <a class="btn-floating btn-large waves-effect waves-light red" value="Italian">Italian
-                        <img src="assets/images/pizza 1.jpg">
-                    </a>
-                    <b class="material-icons">ITALIAN</b>
-                    &nbsp
-
-                    <a class="btn-floating btn-large waves-effect waves-light red" value="Sushi">Sushi
-
-                        <img src="assets/images/sushi roll 1.jpg">
-                    </a>
-                    <b class="material-icons">SUSHI</b>
-                    &nbsp
-                    <a class="btn-floating btn-large waves-effect waves-light red">
-                        <img src="assets/images/surpriceme.jpg">
-                    </a>
-
-                    <b class="material-icons">SURPRISE ME!</b>
+                <div id=cuisineBttn>
+                    <div class="col-sm-12 col-md-5 col-lg-12">
+                        <a class="btn-floating btn-large waves-effect waves-light red">American
+                            <img src="assets/images/american food 1.jpg">
+                        </a>
+                        <!-- <i class="material-icons">American</i> -->
+                        &nbsp
+                        <a class="btn-floating btn-large waves-effect waves-light red">Breakfast
+                            <img src="assets/images/breakfast food 1.jpg">
+                            <!-- <i class="material-icons">Breakfast</i> -->
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-large waves-effect waves-light red">Chinese
+                            <img src="assets/images/chinese food 1.jpg">
+                            <!-- <i class="material-icons">Chinese</i> -->
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-large waves-effect waves-light red">Mexican
+                            <img src="assets/images/taco food 1.jpg">
+                            <!-- <i class="material-icons">Spanish</i> -->
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-large waves-effect waves-light red">Italian
+                            <img src="assets/images/pizza 1.jpg">
+                            <!-- <i class="material-icons">Italian</i> -->
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-large waves-effect waves-light red">Sushi
+                            <img src="assets/images/sushi roll 1.jpg">
+                            <!-- <i class="material-icons">Sushi</i> -->
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-large waves-effect waves-light red">U Pick!
+                            <img src="assets/images/surpriceme.jpg">
+                            <!-- <i class="material-icons">Surprise Me!</i> -->
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-
         <!-- price/distance page -->
         <div id="second page">
             <div class="row">
@@ -107,27 +89,26 @@
                     <h2>PRICE RANGE?</h2>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-sm-12 col-md-5 col-lg-12">
-                <a class="btn-floating btn-medium waves-effect waves-light red" value=1>
-
-                        <i class="material-icons">$</i>
-                </a>
-                &nbsp
-                <a class="btn-floating btn-medium waves-effect waves-light red" value=2>
-
-                        <i class="material-icons">$$</i>
-                </a>
-                &nbsp
-                <a class="btn-floating btn-medium waves-effect waves-light red" value=3>
-
-                        <i class="material-icons">$$$</i>
-                </a>
-                &nbsp
-                <a class="btn-floating btn-medium waves-effect waves-light red" value=4>
-                    </a>
+            <br>
+            <div id="priceBtn">
+                <div class="row">
+                    <div class="col-sm-12 col-md-5 col-lg-12">
+                        <a class="btn-floating btn-medium waves-effect waves-light red">
+                            <i class="material-icons">$</i>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-medium waves-effect waves-light red">
+                            <i class="material-icons">$$</i>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-medium waves-effect waves-light red">
+                            <i class="material-icons">$$$</i>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-medium waves-effect waves-light red">
+                            <i class="material-icons">$$$$</i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -136,72 +117,66 @@
                 </div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-12">
-                    <a class="btn-floating btn-small waves-effect waves-light red" value = 8046>
+            <div id="distBtn">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-12">
+                        <a class="btn-floating btn-small waves-effect waves-light red">
                             <i class="material-icons">5miles</i>
-                    </a>
-
-                    &nbsp
-
-                    <a class="btn-floating btn-small waves-effect waves-light red" value = 16093>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-small waves-effect waves-light red">
                             <i class="material-icons">10miles</i>
-                    </a>
-
-                    &nbsp
-                    <a class="btn-floating btn-small waves-effect waves-light red" value = 32187>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-small waves-effect waves-light red">
                             <i class="material-icons">20miles</i>
-                    </a>
-
-                    &nbsp
-                    <a class="btn-floating btn-medium waves-effect waves-light red" value = 80467>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-medium waves-effect waves-light red">
                             <i class="material-icons">50miles</i>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
         <!-- suggestion page -->
         <div id="third page">
             <div class="row">
                 <div id="sug-text" class="col-sm-12 col-md-6 col-lg-12">
-                    <h3>OUR SUGGESTION:</h3>
+                    <h3>Here is your suggestion:</h3>
                 </div>
             </div>
             <div class="row">
                 <div id="sug-pic" class="col-sm-12 col-md-6 col-lg-12">
-                    <img src="http://via.placeholder.com/350x200" /img>
+                    <p>put image here</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-12">
-                    <a class="btn-floating btn-xlarge waves-effect waves-light red">
-                        <b class="material-icons">REVIEWS?</b>
-                    </a>
-
-                    &nbsp
-                    <a class="btn-floating btn-xlarge waves-effect waves-light red">
-                        <b class="material-icons">MAP!</b>
-                    </a>
-
-                    &nbsp
-                    <a class="btn-floating btn-xlarge waves-effect waves-light red">
-                        <b class="material-icons">NAH!</b>
-                    </a>
-
-                    &nbsp
-                    <a class="btn-floating btn-medium waves-effect waves-light red">
-                        <b class="material-icons">HATE!</b>
-                    </a>
+                <div id="resultsBtn">
+                    <div class="col-sm-12 col-md-6 col-lg-12">
+                        <a class="btn-floating btn-xlarge waves-effect waves-light red">
+                            <i class="material-icons">Reviews?</i>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-xlarge waves-effect waves-light red">
+                            <i class="material-icons">Map!</i>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-xlarge waves-effect waves-light red">
+                            <i class="material-icons">Nah!</i>
+                        </a>
+                        &nbsp
+                        <a class="btn-floating btn-medium waves-effect waves-light red">
+                            <i class="material-icons">Hate!</i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- JavaScript  -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-
 </body>
 
 </html>
