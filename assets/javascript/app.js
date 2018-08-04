@@ -1,5 +1,8 @@
 $(document).ready(function () {
-
+    // Hide second page on initial html loading
+    $("#second-page").hide();
+    // Hide last page on initial html loading
+    $("#third-page").hide();
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyA_VMGGZF6Q-BW970FUV9RJMBwZ16ETqbA",
@@ -88,16 +91,25 @@ $(document).ready(function () {
 
     }
     $(".btn-large").on("click", userCuisine);
+    //when user adds cuisine and zip code and clicks submit, pg 1 hides, pg 2 shows up
     $("#submit").on("click", function(e) {
         e.preventDefault();
         userZip();
         console.log(userCuisineChoice);
         console.log(userLat);
         console.log(userLng);
-        $("#cuisineBttn").hide();
-        $("#zipBox").hide();
+        //$("#cuisineBttn").hide();
+        //$("#zipBox").hide();
+        $("#first-page").hide();
+        $("#second-page").show();
+        console.log("Cuisine and zip code entered");
     });
     $(".btn-medium").on("click", userPricePref);
     $(".btn-small").on("click", userDistancePref);
     $(".btn-xlarge").on("click", diningSuggestion);
+    //when user clicks button on pg 2 to get suggestions, pg 2 hides, pg 3 shows up
+    $("#price-submit").on("click", function(){
+        $("#second-page").hide();
+        $("#third-page").show();
+    })
 });
