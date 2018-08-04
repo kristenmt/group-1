@@ -8,7 +8,6 @@ body {
 .nav-wrapper {
     background-color: black;
     height: 15px;
-
 }
 a.brand-logo {
     font-size: 20px;
@@ -19,11 +18,9 @@ a.brand-logo {
 .nav-wrapper a.brand-logo:hover {
     background-color: orangered;
 }
-
 a.brand-logo {
     color:whitesmoke;
 }
-
 h1 {
     padding: 1em;
     border: 4px orangered;
@@ -34,7 +31,6 @@ h1 {
     font-family: 'Anton', sans-serif;
     text-shadow: 2px 2px 2px gray;
 }
-
 h2 {
     text-align: center;
     color: white;
@@ -45,95 +41,88 @@ h3 {
     color: white;
     font-family: 'Anton', sans-serif;
     text-align: center;
-    text-shadow: 2px 2px 2px gray;
   
+}
+#cuisineBttn{
+padding: 0px 0px 0px 135px;
+}
+#priceBtn{
+    padding: 0px 0px 0px 330px;
+}
+#distBtn{
+    padding: 0px 0px 0px 330px;
+}
+#resultsBtn{
+    padding: 0px 0px 0px 330px;
 }
 /*home page buttons*/
 .btn-floating.btn-large {
-    position: relative;
     width: 100px;
     height: 100px;
+    padding: 5px 0px 0px 0px;
 }
 .brand-logo:focus{
+        background-color: black;
+        color: white;
+}
+.brand-logo:hover{
     background-color: black;
     color: white;
 }
-.brand-logo:hover{
-background-color: black;
-color: white;
-}
 .brand-logo:active{
-color: white;
+    color: white;
 }
 .brand-logo{
-color: white;
+    color: white;
 }
 nav a{
-color: white;
+    color: white;
 }
 nav .brand-logo{
-color: white;
+    color: white;
 }
 /*price page buttons*/
 .btn-floating.btn-medium {
-    position: relative;
-    z-index: 1;
     width: 80px;
     height: 80px;
    
 }
 /*distance page buttons*/
 .btn-floating.btn-small {
-    position: relative;
     width: 80px;
     height: 80px;
+    
 }
-
 /*results page buttons*/
 .btn-floating.btn-xlarge {
     width: 80px;
     height: 80px;
-}
-
-b {
-    text-align: center;
+     
+    
 }
 .material-icons {
-   text-shadow: 1px 1px 2px black;
+   text-shadow: 1px 1px 2px lightgray;
    color: white;
-   position: absolute;
-   z-index: 88;
-   padding: 1.3em;
-   margin-bottom: 10em;
-   
 }
-
 #zipBox {
 background-color: orangered;
 color:white;
 font-weight: bolder;
-margin: 0px 0px 30px 0px;
-
+margin: 0px 0px 30px 350px;
 }
-
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     a.brand-logo{font-size: 15px;
     text-align: 0;}
-
 }
-
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     
 } 
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     
 } 
-
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     
