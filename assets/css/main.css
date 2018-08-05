@@ -42,6 +42,7 @@ h3 {
     color: white;
     font-family: 'Anton', sans-serif;
     text-align: center;
+    text-shadow: 2px 2px 2px gray;
   
 }
 .brand-logo:hover{
@@ -65,7 +66,8 @@ nav .brand-logo{
     width: 100px;
     height: 100px;
     padding: 5px 0px 0px 0px;
-}
+    text-shadow: 1px 1px 2px black;
+    font-family: 'Quicksand', sans-serif;}
 #cuisineBttn{
     padding: 0px 0px 0px 135px;
 }
@@ -86,8 +88,9 @@ a.btn-floating, .flow-text{
     font-family: 'Quicksand', sans-serif;
 }
 .flow-text{
-    color: orangered;
+    color: white;
     text-shadow: 2px 2px 2px gray;
+    font-family: 'Anton', sans-serif;
 }
 form{
     border: 4px solid orangered;
@@ -121,8 +124,13 @@ input{
     height: 80px;
 }
 .material-icons {
-   text-shadow: 1px 1px 2px lightgray;
-   color: white;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    position: absolute;
+    z-index: 88;
+    padding: 1.3em;
+    line-height: 115px;
+    
 }
 #zipBox {
 background-color: orangered;
@@ -130,6 +138,56 @@ color:white;
 font-weight: bolder;
 margin: 0px 0px 30px 350px;
 }
+
+.material-icons-prices {
+    text-shadow: 1px 1px 2px black;
+    font-family: 'Anton', sans-serif;
+    line-height: 15px;
+    padding: 1.8em;
+}
+.material-icons-pricess {
+    text-shadow: 1px 1px 2px black;
+    padding: 1.8em;
+    line-height: 18px;
+    font-family: 'Anton', sans-serif;
+}
+.material-icons-pricesss {
+    text-shadow: 1px 1px 2px black;
+    padding: 1.5em;
+    line-height: 20px;
+    font-family: 'Anton', sans-serif;
+}
+.material-icons-pricessss {
+    text-shadow: 1px 1px 2px black;
+    padding: 1.4em;
+    line-height: 20px;
+    font-family: 'Anton', sans-serif;
+}
+.material-icons-miles {
+    text-shadow: 1px 1px 2px black;
+    padding: .5em;
+    line-height: 50px;
+    font-family: 'Anton', sans-serif;
+}
+.material-icons-miless {
+    text-shadow: 1px 1px 2px black;
+    padding: .5em;
+    line-height: 50px;
+    font-family: 'Anton', sans-serif;
+}
+.material-icons-review {
+    text-shadow: 1px 1px 2px black;
+    padding: .3em;
+    line-height: 55px;
+    font-family: 'Anton', sans-serif;
+}
+.material-icons-sug {
+    text-shadow: 1px 1px 2px black;
+    padding: 1em;
+    line-height: 35px;
+    font-family: 'Anton', sans-serif;
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     a.brand-logo{font-size: 15px;
