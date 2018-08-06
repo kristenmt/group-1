@@ -18,17 +18,20 @@ $(document).ready(function () {
     // Assign the reference to the database to a variable named 'db'
     var db = firebase.database();
     // global variables 
-    var userCuisineChoice = [];
+    var userCuisineChoice = "";
     var userLat = [];
     var userLng = [];
-    var userPricePrefChoice = [];
-    var userDistancePrefChoice = [];
+    var userPricePrefChoice = "";
+    var userDistancePrefChoice = "";
     var randArray = [];
+    var sugPlaceId = [];
+    var restLat = [];
+    var restLng = [];
 
     function userCuisine(e) {
         e.preventDefault();
-        var newUserCuisine = $(this).attr("value");
-        userCuisineChoice.push(newUserCuisine);
+        // var newUserCuisine = $(this).attr("value");
+        userCuisineChoice = $(this).attr("value");
     }
 
     function userZip() {
@@ -54,9 +57,9 @@ $(document).ready(function () {
     function userPricePref(e) {
         e.preventDefault();
         // grabs user price choice 
-        var newUserPricePref = $(this).attr("value");
+        // var newUserPricePref = $(this).attr("value");
         // push to global variable
-        userPricePrefChoice.push(newUserPricePref);
+        userPricePrefChoice = $(this).attr("value");
 
         // console.log("this is the user price range: " + userPricePrefChoice);
     }
@@ -64,8 +67,8 @@ $(document).ready(function () {
     function userDistancePref(e) {
         e.preventDefault();
         // grabs user distance choice
-        var newUserDistancePrefChoice = $(this).attr("value");
-        userDistancePrefChoice.push(newUserDistancePrefChoice);
+        //  var newUserDistancePrefChoice = $(this).attr("value");
+        userDistancePrefChoice = $(this).attr("value");
         // console.log("this is the user distance preference: " + userDistancePrefChoice + " in meters (place api uses meters as length parameter)");
 
     }
@@ -79,14 +82,13 @@ $(document).ready(function () {
         // var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.5383,81.3792&radius=160000&type=restaurant&keyword=" + userCuisineChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU"
         var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,reviews[],opening_hours,rating,price_level=" + userPricePref + "&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=" + apiKey;
 
-        var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId + "&key=" + apiKey;
-        var sugPlaceId = [];
+        // var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId[0] + "&fields=name,review,formatted_phone_number&key=" + apiKey;
         
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
-            // console.log(response);
+            console.log(response);
             ///======push our respone into an array select from 
             randArray.push(response.results) 
             // console.log(randArray);
@@ -97,9 +99,12 @@ $(document).ready(function () {
             // var restaurantImage = $("<img src='" + response.results[randNumb].photos[0].photo_reference + "'>");
             var placeId = response.results[randNumb].place_id;
             sugPlaceId.push(placeId);
+            // console.log(sugPlaceId);
             var name = $("<h1>").text(response.results[randNumb].name);
             var rating = $("<h3>").text("Rating: " + response.results[randNumb].rating + "!");
             var address = $("<h4>").text("Address: " + response.results[randNumb].vicinity);
+            var photo = $("<img src='" + response.results[randNumb].photos[0] + "'/>");
+            address.append(photo);
             rating.append(address);
             name.append(rating);
 
@@ -107,20 +112,72 @@ $(document).ready(function () {
             // suggestedChoice.append(name);
             $("#result").append(name);
             $("#third-page").show();
-            $("#reviews").on("click", function(){
-            $("#reviews-modal").show();
-            });
         });
+    };
+
+
+    function review () {
+
+        var proxy = "https://cors-anywhere.herokuapp.com/";
+        var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
+        var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId[0] + "&fields=name,review,formatted_phone_number&key=" + apiKey;
 
         $.ajax({
             url: queryURL2,
             method: "GET",
-        }).then(function(response) {
+        }).then(function (response) {
             console.log(response);
-            console.log(sugPlaceId);
-        });
+            for (var i=0; i<6; i++) {
+                var pastReviews = $("<p id='review'>" + response.result.reviews[i].text + "</p>");
 
-    }
+                $("#modalReviews").append(pastReviews);
+            };
+
+            // console.log(sugPlaceId);
+        });
+    };
+
+    // var map;
+    // function initMap() {
+    //     map = new google.maps.Map(document.getElementById("result"), {
+    //         center: { lat: -34.397, lng: 150.644 },
+    //         zoom: 8
+    //     });
+    // };
+
+    function map () {
+
+        // var sugRestaurant = "Pei Wei";
+        // var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
+        // var source = "https://www.google.com/maps/embed/v1/search";
+        // var newMap = $("<iframe src=" + source + "?q=" + sugRestaurant + "&key=" + apiKey + "</iframe>");
+        var proxy = "https://cors-anywhere.herokuapp.com/";
+        var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
+        
+
+        var queryURL3 = proxy + "https://maps.googleapis.com/maps/api/js?key=" + apiKey;
+        console.log(queryURL3);
+
+            // var map;
+            // function initMap() {
+            //      map = new google.maps.Map(document.getElementById("result"), {
+            //         center: { lat: -34.397, lng: 150.644 },
+            //         zoom: 8
+            //     });
+            // };
+            
+
+            // var restaurant = { lat: 28.658758, lng: -81.4223438 };
+            // var restMap = new google.maps.Map(
+            //     document.getElementById("resultsBtn"), { zoom: 4, center: restaurant });
+            // var marker = new google.maps.Marker({ position: restaurant, map: restMap });
+
+            // var newMap = $("<iframe src=" + source + "?q=" + sugRestaurant + "&key=" + apiKey + "</iframe>");
+            // // console.log(sugPlaceId);
+        
+    };
+
+
     $(".btn-large").on("click", userCuisine);
     //when user adds cuisine and zip code and clicks submit, pg 1 hides, pg 2 shows up
     $("#submit").on("click", function(e) {
@@ -147,4 +204,13 @@ $(document).ready(function () {
         $("#second-page").hide();
         // $("#third-page").show();
     });
+    $("#reviews").on("click", function (e) {
+        e.preventDefault();
+        review();
+        $("#reviews-modal").show();
+    });
+    // $("#map").on("click", function(e) {
+    //     e.preventDefault();
+    //     map();
+    // });
 });
