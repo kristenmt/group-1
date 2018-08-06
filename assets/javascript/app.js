@@ -70,27 +70,54 @@ $(document).ready(function () {
 
     }
     function diningSuggestion(e) {
-        e.preventDefault();
+        // e.preventDefault();
        
         //proxy server to avoid CORS Error
         var proxy = "https://cors-anywhere.herokuapp.com/";
-        var apiKey = "AIzaSyBAoGHDGBMSknFPPldhc67aA7Ebd9hy8iA";
+        var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
         //var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
         // var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.5383,81.3792&radius=160000&type=restaurant&keyword=" + userCuisineChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU"
-        var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,opening_hours,rating,price_level=" + userPricePref + "&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=" + apiKey;
+        var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,reviews[],opening_hours,rating,price_level=" + userPricePref + "&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=" + apiKey;
+
+        var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId + "&key=" + apiKey;
+        var sugPlaceId = [];
         
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
             ///======push our respone into an array select from 
             randArray.push(response.results) 
-            console.log(randArray);
+            // console.log(randArray);
             //======= function to go through the array and select a random result
             var randNumb = Math.floor((Math.random() * response.results.length) + 1);
-            console.log(randNumb);
+            // console.log(randNumb);
             console.log(response.results[randNumb]);
+            // var restaurantImage = $("<img src='" + response.results[randNumb].photos[0].photo_reference + "'>");
+            var placeId = response.results[randNumb].place_id;
+            sugPlaceId.push(placeId);
+            var name = $("<h1>").text(response.results[randNumb].name);
+            var rating = $("<h3>").text("Rating: " + response.results[randNumb].rating + "!");
+            var address = $("<h4>").text("Address: " + response.results[randNumb].vicinity);
+            rating.append(address);
+            name.append(rating);
+
+            // var reviews = 
+            // suggestedChoice.append(name);
+            $("#result").append(name);
+            $("#third-page").show();
+            $("#reviews").on("click", function(){
+            $("#reviews-modal").show();
+            });
+        });
+
+        $.ajax({
+            url: queryURL2,
+            method: "GET",
+        }).then(function(response) {
+            console.log(response);
+            console.log(sugPlaceId);
         });
 
     }
@@ -118,6 +145,6 @@ $(document).ready(function () {
         console.log(userDistancePrefChoice);
         diningSuggestion();
         $("#second-page").hide();
-        $("#third-page").show();
+        // $("#third-page").show();
     });
 });
