@@ -90,7 +90,7 @@ a.btn-floating, .flow-text{
 .flow-text{
     color: white;
     text-shadow: 2px 2px 2px gray;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 form{
     border: 4px solid orangered;
@@ -141,7 +141,7 @@ margin: 0px 0px 30px 350px;
 
 .material-icons-prices {
     text-shadow: 1px 1px 2px black;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     line-height: 15px;
     padding: 1.8em;
 }
@@ -149,61 +149,161 @@ margin: 0px 0px 30px 350px;
     text-shadow: 1px 1px 2px black;
     padding: 1.8em;
     line-height: 18px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .material-icons-pricesss {
     text-shadow: 1px 1px 2px black;
     padding: 1.5em;
     line-height: 20px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .material-icons-pricessss {
     text-shadow: 1px 1px 2px black;
     padding: 1.4em;
     line-height: 20px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .material-icons-miles {
     text-shadow: 1px 1px 2px black;
     padding: .5em;
     line-height: 50px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .material-icons-miless {
     text-shadow: 1px 1px 2px black;
     padding: .5em;
     line-height: 50px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .material-icons-review {
     text-shadow: 1px 1px 2px black;
     padding: .3em;
     line-height: 55px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .material-icons-sug {
     text-shadow: 1px 1px 2px black;
     padding: 1em;
     line-height: 35px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+/*Iphones (320px and up)*/
+@media only screen and (min-width: 320px) {
+    a.brand-logo.white-text {
+        margin-left: -50px;
+        font-size: 15px;
+    }
+    #cuisineBttn {
+        padding: 0px 0px 0px 0px;
+    }
+    #distBtn {
+        padding: 0px 0px 0px 0px;
+    }
+    #priceBtn {
+        padding: 0px 0px 0px 0px;
+    }
+    #resultsBtn {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+/* Smaller devices (small phones, 400px and up) */
+@media only screen and (min-width: 400px) {
+    a.brand-logo.white-text {
+        margin-left: -85px;
+        
+    }
+    #cuisineBttn {
+        padding: 0px 0px 0px 0px;
+    }
+    #distBtn {
+        padding: 0px 0px 0px 0px;
+    }
+    #priceBtn {
+        padding: 0px 0px 0px 0px;
+    }
+    #resultsBtn {
+        padding: 0px 0px 0px 0px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    a.brand-logo{font-size: 15px;
-    text-align: 0;}
+    a.brand-logo.white-text {
+        margin-left: -180px;
+        
+    }
+    #cuisineBttn {
+        padding: 0px 0px 0px 35px;
+    }
+    #distBtn {
+        padding: 0px 0px 0px 80px;
+    }
+    #priceBtn {
+        padding: 0px 0px 0px 80px;
+    }
+    #resultsBtn {
+        padding: 0px 0px 0px 80px;
+    }
+    
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    a.brand-logo.white-text {
+        margin-left: -250px;
+        
+    }
+    #cuisineBttn {
+        padding: 0px 0px 0px 35px;
+    }
+    #distBtn {
+        padding: 0px 0px 0px 130px;
+    }
+    #priceBtn {
+        padding: 0px 0px 0px 130px;
+    }
+    #resultsBtn {
+        padding: 0px 0px 0px 130px;
+    }
     
 } 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    
+    a.brand-logo.white-text {
+        margin-left: -380px;
+        
+    }
+    #cuisineBttn {
+        padding: 0px 0px 0px 30px;
+    }
+    #distBtn {
+        padding: 0px 0px 0px 230px;
+    }
+    #priceBtn {
+        padding: 0px 0px 0px 230px;
+    }
+    #resultsBtn {
+        padding: 0px 0px 0px 230px;
+    }
 } 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    
+    a.brand-logo.white-text {
+        margin-left: -20px;
+        
+    }
+    #cuisineBttn {
+        padding: 0px 0px 0px 40px;
+    }
+    #distBtn {
+        padding: 0px 0px 0px 230px;
+    }
+    #priceBtn {
+        padding: 0px 0px 0px 230px;
+    }
+    #resultsBtn {
+        padding: 0px 0px 0px 230px;
+    }
 }
 
 
