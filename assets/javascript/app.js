@@ -103,8 +103,8 @@ $(document).ready(function () {
             var name = $("<h1>").text(response.results[randNumb].name);
             var rating = $("<h3>").text("Rating: " + response.results[randNumb].rating + "!");
             var address = $("<h4>").text("Address: " + response.results[randNumb].vicinity);
-            var photo = $("<img src='" + response.results[randNumb].photos[0] + "'/>");
-            address.append(photo);
+            // var photo = $("<img src='" + response.results[randNumb].photos[0] + "'/>");
+            // address.append(photo);
             rating.append(address);
             name.append(rating);
 
@@ -112,6 +112,23 @@ $(document).ready(function () {
             // suggestedChoice.append(name);
             $("#result").append(name);
             $("#third-page").show();
+        });
+    };
+
+    function photo () { 
+
+        var proxy = "https://cors-anywhere.herokuapp.com/";
+        var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
+        var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId[0] + "&fields=name,review,formatted_phone_number&key=" + apiKey;
+
+        $.ajax({
+            url: queryURL2,
+            method: "GET",
+        }).then(function (response) {
+            console.log(response);
+            
+
+            // console.log(sugPlaceId);
         });
     };
 
@@ -207,7 +224,7 @@ $(document).ready(function () {
     $("#reviews").on("click", function (e) {
         e.preventDefault();
         review();
-        $("#reviews-modal").show();
+        $("#modalReviews").show();
     });
     // $("#map").on("click", function(e) {
     //     e.preventDefault();
