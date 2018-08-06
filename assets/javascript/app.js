@@ -45,6 +45,9 @@ $(document).ready(function () {
             
             userLat.push(lat);
             userLng.push(lng);
+
+            // console.log(userLat);
+            // console.log(userLng);
         });
     }
 
@@ -71,9 +74,10 @@ $(document).ready(function () {
        
         //proxy server to avoid CORS Error
         var proxy = "https://cors-anywhere.herokuapp.com/";
+        var apiKey = "AIzaSyBAoGHDGBMSknFPPldhc67aA7Ebd9hy8iA";
         //var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
         // var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.5383,81.3792&radius=160000&type=restaurant&keyword=" + userCuisineChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU"
-        var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,opening_hours,rating,price_level=1&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
+        var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,opening_hours,rating,price_level=" + userPricePref + "&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=" + apiKey;
         
         $.ajax({
             url: queryURL,
@@ -106,10 +110,14 @@ $(document).ready(function () {
     });
     $(".btn-medium").on("click", userPricePref);
     $(".btn-small").on("click", userDistancePref);
-    $(".btn-xlarge").on("click", diningSuggestion);
+    // $(".btn-xlarge").on("click", diningSuggestion);
     //when user clicks button on pg 2 to get suggestions, pg 2 hides, pg 3 shows up
-    $("#price-submit").on("click", function(){
+    $("#price-submit").on("click", function(e) {
+        e.preventDefault();
+        console.log(userPricePrefChoice);
+        console.log(userDistancePrefChoice);
+        diningSuggestion();
         $("#second-page").hide();
         $("#third-page").show();
-    })
+    });
 });
