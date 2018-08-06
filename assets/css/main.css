@@ -142,25 +142,25 @@ margin: 0px 0px 30px 350px;
 .material-icons-prices {
     text-shadow: 1px 1px 2px black;
     font-family: 'Quicksand', sans-serif;
-    line-height: 15px;
-    padding: 1.8em;
+    line-height: 10px;
+    padding: 1.9em;
 }
 .material-icons-pricess {
     text-shadow: 1px 1px 2px black;
-    padding: 1.8em;
-    line-height: 18px;
+    padding: 1.6em;
+    line-height: 15px;
     font-family: 'Quicksand', sans-serif;
 }
 .material-icons-pricesss {
     text-shadow: 1px 1px 2px black;
-    padding: 1.5em;
-    line-height: 20px;
+    padding: 1.3em;
+    line-height: 25px;
     font-family: 'Quicksand', sans-serif;
 }
 .material-icons-pricessss {
     text-shadow: 1px 1px 2px black;
-    padding: 1.4em;
-    line-height: 20px;
+    padding: 1em;
+    line-height: 35px;
     font-family: 'Quicksand', sans-serif;
 }
 .material-icons-miles {
@@ -171,7 +171,7 @@ margin: 0px 0px 30px 350px;
 }
 .material-icons-miless {
     text-shadow: 1px 1px 2px black;
-    padding: .5em;
+    padding: .7em;
     line-height: 50px;
     font-family: 'Quicksand', sans-serif;
 }
@@ -303,6 +303,25 @@ margin: 0px 0px 30px 350px;
     }
     #resultsBtn {
         padding: 0px 0px 0px 230px;
+    }
+}
+/*Extra-Extra large screen (1440px)*/
+@media only screen and (min-width: 1400px) {
+    a.brand-logo.white-text {
+        margin-left: 20px;
+        
+    }
+    #cuisineBttn {
+        padding: 0px 0px 0px 100px;
+    }
+    #distBtn {
+        padding: 0px 0px 0px 300px;
+    }
+    #priceBtn {
+        padding: 0px 0px 0px 300px;
+    }
+    #resultsBtn {
+        padding: 0px 0px 0px 300px;
     }
 }
 
