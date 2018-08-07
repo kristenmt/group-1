@@ -197,6 +197,17 @@ margin: 0px 0px 30px 350px;
     line-height: 35px;
     font-family: 'Quicksand', sans-serif;
 }
+/* modals */
+.modal h4{
+    font-family: 'Anton', sans-serif;
+}
+.modal p{
+    font-family: 'Quicksand', sans-serif;
+}
+.modal{
+    border: 4px solid orangered;
+    padding: 10px;
+}
 /*Iphones (320px and up)*/
 @media only screen and (min-width: 320px) {
     a.brand-logo.white-text {
