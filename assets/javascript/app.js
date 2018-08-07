@@ -68,6 +68,7 @@ $(document).ready(function () {
             method: "GET",
         }).then(function (response) {
             console.log(response);
+            $("#result").empty();
             ///======push our respone into an array select from 
             randArray.push(response.results)
             // console.log(randArray);
