@@ -203,13 +203,28 @@ $(document).ready(function () {
         $("#second-page").hide();
         // $("#third-page").show();
     });
+    //Show modal review
     $("#reviews").on("click", function (e) {
         e.preventDefault();
         review();
         $("#modalReviews").show();
     });
+    //Hide modal review
+    $("#reviewsBack").on("click", function (e) {
+        e.preventDefault();
+        $("#modalReviews").hide();
+    });
+   
+    //Show modal map
     $("#map").on("click", function(e) {
         e.preventDefault();
         // map();
+        $("#modalMap").show();
     });
+    //Hide modal map
+    $("#mapBack").on("click", function (e) {
+        e.preventDefault();
+        $("#modalMap").hide();
+    });
+   
 });

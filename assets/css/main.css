@@ -123,6 +123,16 @@ input{
     width: 80px;
     height: 80px;
 }
+.btn-floating.btn-xlarge:hover{
+    background-color: black;
+    color: white;
+}
+.btn-floating.btn-xlarge:active{
+    color: white;
+}
+.btn-floating.btn-xlarge {
+    color: white;
+}
 .material-icons {
     text-shadow: 1px 1px 2px black;
     color: white;
