@@ -7,14 +7,28 @@ body {
 }
 .nav-wrapper {
     background-color: black;
-    height: 15px;
+    /* height: 25px; */
+}
+nav{
+    height: 100px;
+    margin-top: 0;
+}
+.nav-wrapper a.app-logo:hover{
+    background-color: transparent;
+}
+.app-logo {
+    width: 120px;
+    float: left;
+    margin-top: -10px;
 }
 a.brand-logo {
-    font-size: 20px;
+    font-size: 45px;
     font-family: 'Quicksand', sans-serif;
     color: white;
     align-self: auto;
     padding: 1em;
+    float: left;
+    margin-top: 10px;
 }
 .nav-wrapper a.brand-logo:hover {
     background-color: orangered;
