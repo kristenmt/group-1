@@ -24,7 +24,7 @@ $(document).ready(function () {
     var userPricePrefChoice = "";
     var userDistancePrefChoice = "";
     var randArray = [];
-    var sugPlaceId = [];
+    var sugPlaceId = "";
     var restLat = [];
     var restLng = [];
     var map;
@@ -76,8 +76,9 @@ $(document).ready(function () {
             // console.log(randNumb);
             console.log(response.results[randNumb]);
             // var restaurantImage = $("<img src='" + response.results[randNumb].photos[0].photo_reference + "'>");
-            var placeId = response.results[randNumb].place_id;
-            sugPlaceId.push(placeId);
+            sugPlaceId = response.results[randNumb].place_id;
+            console.log(sugPlaceId);
+            
             // console.log(sugPlaceId);
             respLat = response.results[randNumb].geometry.location.lat;
             respLng = response.results[randNumb].geometry.location.lng;
@@ -93,10 +94,11 @@ $(document).ready(function () {
             rating.append(address);
             name.append(rating);
 
-            $("#result").append(name);
+            $("#result").prepend(name);
 
             $("#third-page").show();
         });
+        
     };
     function photo() {
         // var photos = place.photos
@@ -115,17 +117,28 @@ $(document).ready(function () {
         // });
     };
     function review() {
+        $(document).ajaxStart(function () {
+            $(".preloader-wrapper").hide();
+            // $("#wait").css("display", "block");
+        });
+        $(document).ajaxComplete(function () {
+            $(".preloader-wrapper").hide();
+            $("#third-page").show();
+            // $("#wait").css("display", "none");
+        });
         var proxy = "https://cors-anywhere.herokuapp.com/";
         var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
-        var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId[0] + "&fields=name,review,formatted_phone_number&key=" + apiKey;
+        var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId + "&fields=name,review,formatted_phone_number&key=" + apiKey;
         $.ajax({
             url: queryURL2,
             method: "GET",
         }).then(function (response) {
             console.log(response);
+            $("#newReview").empty();
             for (var i = 0; i < 6; i++) {
                 var pastReviews = $("<p id='review'>" + "* " + response.result.reviews[i].text + "</p>" + "<br>");
-                $("#modalReviews").append(pastReviews);
+
+                $("#newReview").append(pastReviews);
             };
         });
     };
@@ -192,11 +205,28 @@ $(document).ready(function () {
         e.preventDefault();
         generateMap();
         $("#modalMap").show();
+        $(".btn-xlarge").hide();
     });
     //Hide modal map
     $("#mapBack").on("click", function (e) {
         e.preventDefault();
         $("#modalMap").hide();
+        $(".btn-xlarge").show();
+    });
+
+    $("#nahButton").on("click", function (e) {
+        e.preventDefault();
+        $(document).ajaxStart(function () {
+            $(".preloader-wrapper").hide();
+            // $("#wait").css("display", "block");
+        });
+        $(document).ajaxComplete(function () {
+            $(".preloader-wrapper").hide();
+            $("#third-page").show();
+            // $("#wait").css("display", "none");
+        })
+        diningSuggestion();
+        $("#second-page").hide();
     });
 
 });
