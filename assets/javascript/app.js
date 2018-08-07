@@ -147,8 +147,15 @@ $(document).ready(function () {
     $("#submit").on("click", function (e) {
         e.preventDefault();
         userZip();
-        $("#first-page").hide();
-        $("#second-page").show();
+        var submit = $("#zip").val();
+        if (submit.length < 5 || submit.length > 5) {
+            alert("Invalid Zip");
+        }
+        else {
+            $("#first-page").hide();
+            $("#second-page").show();
+            console.log("Cuisine and zip code entered");
+        };
     });
     $(".btn-medium").on("click", userPricePref);
     $(".btn-small").on("click", userDistancePref);
