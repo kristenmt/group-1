@@ -8,6 +8,7 @@ body {
 .nav-wrapper {
     background-color: black;
     /* height: 25px; */
+    margin-left: -8px;
 }
 nav{
     height: 100px;
@@ -57,7 +58,7 @@ h3 {
   
 }
 .preloader-wrapper {
-    margin: 300px 0px 0px 400px;
+    margin: 250px 0px 0px 430px;
 }
 .brand-logo:hover{
     background-color: black;
@@ -86,14 +87,14 @@ nav .brand-logo{
     padding: 0px 0px 0px 135px;
 }
 #priceBtn{
-        padding: 0px 0px 0px 330px;
+        margin: 0px 0px 0px 304px;
 }
 #distBtn{
-        padding: 0px 0px 0px 330px;
+    margin: 0px 0px 0px 304px;
 }
-#resultsBtn{
-        padding: 0px 0px 0px 330px;
-}
+/* #resultsBtn{
+    margin: 0px 0px 0px 372px;
+} */
 .brand-logo:focus{
         background-color: black;
         color: white;
@@ -106,7 +107,7 @@ a.btn-floating, .flow-text{
     text-shadow: 2px 2px 2px gray;
     font-family: 'Quicksand', sans-serif;
 }
-form{
+form {
     border: 4px solid orangered;
 }
 input{
@@ -238,145 +239,150 @@ margin: 0px 0px 30px 243px;
         margin-left: -20px;
         
     }
+    #zipBox {
+        margin: 0px 0px 0px 216px;
+    }
     #cuisineBttn {
-        margin: 0px 0px 0px 0px;
+        margin: 0px 0px 0px -49px;
     }
-    #distBtn {
-        padding: 0px 0px 0px 230px;
+    #distMover {
+        margin: 0px 0px 0px -79px;
     }
-    #priceBtn {
-        padding: 0px 0px 0px 230px;
+    #priceMover {
+        margin: 0px 0px 0px -79px;
+    }
+    .preloader-wrapper {
+        margin: 200px 0px 0px 380px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 230px;
+        margin: 0px 0px 0px 287px;
     }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
     a.brand-logo.white-text {
-        margin-left: -380px;
+        margin-left: -292px;
         
     }
     #cuisineBttn {
-        padding: 0px 0px 0px 30px;
+        margin: 0px 0px 0px -49px;
     }
-    #distBtn {
-        padding: 0px 0px 0px 230px;
+    #distMover {
+        margin: 0px 0px 0px -79px;
     }
-    #priceBtn {
-        padding: 0px 0px 0px 230px;
+    #pricemover {
+        margin: 0px 0px 0px 194px;
+    }
+    .preloader-wrapper {
+        margin: 250px 0px 0px 380px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 230px;
+        margin: 0px 0px 0px 287px;
     }
+   
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
     a.brand-logo.white-text {
-        margin-left: -250px;
+        margin-left: -182px;
         
     }
     #cuisineBttn {
-        padding: 0px 0px 0px 35px;
+        margin: 0px 0px 0px -36px;
     }
-    #distBtn {
-        padding: 0px 0px 0px 130px;
+    #zipBox {
+        margin: 0px 0px 0px 156px;
     }
-    #priceBtn {
-        padding: 0px 0px 0px 130px;
+    #distMover {
+        margin: 0px 0px 0px -127px;
+    }
+    #priceMover {
+        margin: 0px 0px 0px -127px;
+    }
+    .preloader-wrapper {
+        margin: 200px 0px 0px 300px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 130px;
+        margin: 0px 0px 0px 230px;
     }
     
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
     a.brand-logo.white-text {
-        margin-left: -180px;
+        margin-left: -90px;
         
     }
     #cuisineBttn {
-        padding: 0px 0px 0px 35px;
+        margin: 0px 0px 0px -36px;
     }
-    #distBtn {
-        padding: 0px 0px 0px 80px;
+    #zipBox {
+        margin: 0px 0px 0px 133px;
     }
-    #priceBtn {
-        padding: 0px 0px 0px 80px;
+    #distMover {
+        margin: 0px 0px 0px -143px;
+    }
+    #priceMover {
+        margin: 0px 0px 0px -143px;
+    }
+    #price-submit {
+        margin-left: 20px;
+    }
+    .preloader-wrapper {
+        margin: 300px 0px 0px 250px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 80px;
+        margin: 0px 0px 0px 114px;
     }
-    
+}
 /* Smaller devices (small phones, 400px and up) */
-@media only screen and (max-width: 400px) {
+/* @media only screen and (max-width: 400px) {
     a.brand-logo.white-text {
         margin-left: -85px;
         
     }
     #cuisineBttn {
-        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
     }
-    #distBtn {
-        padding: 0px 0px 0px 0px;
+    #distMover {
+        margin: 0px 0px 0px 0px;
     }
-    #priceBtn {
-        padding: 0px 0px 0px 0px;
+    #priceMover {
+        margin: 0px 0px 0px 0px;
+    }
+    .preloader-wrapper {
+        margin: 200px 0px 0px 300px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 0px;
-    }
+        margin: 0px 0px 0px 0px;
+    } */
 /*Iphones (320px and up)*/
 @media only screen and (max-width: 320px) {
     a.brand-logo.white-text {
-        margin-left: -50px;
+        margin-left: 7px;
+        padding: 0px 0px 0px 0px;
+        font-size: 10px;
+    }
+    h1 {
         font-size: 15px;
     }
     #cuisineBttn {
-        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
     }
-    #distBtn {
-        padding: 0px 0px 0px 0px;
+    #zipBox {
+        margin: 0px 0px 0px 76px;
     }
-    #priceBtn {
-        padding: 0px 0px 0px 0px;
+    #distMover {
+        margin: 0px 0px 0px 0px;
+    }
+    #priceMover {
+        margin: 0px 0px 0px 0px;
+    }
+    .preloader-wrapper {
+        margin: 200px 0px 0px 300px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
     }
 }
-/*Extra-Extra large screen (1440px)*/
-/* @media only screen and (min-width: 1400px) {
-    a.brand-logo.white-text {
-        margin-left: 20px;
-        
-    }
-    #cuisineBttn {
-        padding: 0px 0px 0px 100px;
-    }
-    #distBtn {
-        padding: 0px 0px 0px 329px;
-    }
-    #priceBtn {
-        padding: 0px 0px 0px 329px;
-    }
-    #resultsBtn {
-        padding: 0px 0px 0px 370px;
-    }
-
-} */
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
+}}}
