@@ -93,7 +93,7 @@ $(document).ready(function () {
             rating.append(address);
             name.append(rating);
 
-            $("#result").append(name);
+            $("#result").prepend(name);
 
             $("#third-page").show();
         });
@@ -184,12 +184,28 @@ $(document).ready(function () {
     $("#map").on("click", function (e) {
         e.preventDefault();
         generateMap();
-        $("#modalMap").show();
+        $("#modalMap").show(); 
+        $(".btn-xlarge").hide();
     });
     //Hide modal map
     $("#mapBack").on("click", function (e) {
         e.preventDefault();
         $("#modalMap").hide();
+        $(".btn-xlarge").show();
     });
-
+    $("#nah").on("click", function (e) {
+        e.preventDefault();
+        $(document).ajaxStart(function () {
+            $(".preloader-wrapper").show();
+            // $("#wait").css("display", "block");
+        });
+        $(document).ajaxComplete(function () {
+            $(".preloader-wrapper").hide();
+            $("#third-page").show();
+            // $("#wait").css("display", "none");
+        })
+        diningSuggestion();
+        $("#second-page").hide();
+    });
+    
 });
