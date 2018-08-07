@@ -45,6 +45,9 @@ h3 {
     text-shadow: 2px 2px 2px gray;
   
 }
+.preloader-wrapper {
+    margin: 300px 0px 0px 400px;
+}
 .brand-logo:hover{
     background-color: black;
     color: white;
