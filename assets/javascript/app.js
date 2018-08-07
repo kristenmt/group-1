@@ -130,7 +130,7 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
             for (var i=0; i<6; i++) {
-                var pastReviews = $("<p id='review'>" + response.result.reviews[i].text + "</p>");
+                var pastReviews = $("<p id='review'>" + "* " + response.result.reviews[i].text + "</p>" + "<br>");
 
                 $("#modalReviews").append(pastReviews);
             };

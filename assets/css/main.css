@@ -208,6 +208,9 @@ margin: 0px 0px 30px 350px;
     border: 4px solid orangered;
     padding: 10px;
 }
+#review p{
+    border-top: 2px gray;
+}
 /*Iphones (320px and up)*/
 @media only screen and (min-width: 320px) {
     a.brand-logo.white-text {
