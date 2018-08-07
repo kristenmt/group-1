@@ -3,6 +3,8 @@ $(document).ready(function () {
     $("#second-page").hide();
     // Hide last page on initial html loading
     $("#third-page").hide();
+    //Preloader hide
+    $(".preloader-wrapper").hide();
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyA_VMGGZF6Q-BW970FUV9RJMBwZ16ETqbA",
@@ -198,11 +200,21 @@ $(document).ready(function () {
         e.preventDefault();
         // console.log(userPricePrefChoice);
         // console.log(userDistancePrefChoice);
+        $(document).ajaxStart(function(){
+            $(".preloader-wrapper").show();
+            // $("#wait").css("display", "block");
+        });
+        $(document).ajaxComplete(function(){
+            $(".preloader-wrapper").hide();
+            $("#third-page").show();
+            // $("#wait").css("display", "none");
+        })
         diningSuggestion();
         // photo();
         $("#second-page").hide();
         // $("#third-page").show();
     });
+
     //Show modal review
     $("#reviews").on("click", function (e) {
         e.preventDefault();
