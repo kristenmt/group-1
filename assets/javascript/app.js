@@ -30,9 +30,8 @@ $(document).ready(function () {
 
     function userCuisine(e) {
         e.preventDefault();
-        // var newUserCuisine = $(this).attr("value");
         userCuisineChoice = $(this).attr("value");
-    }
+    };
 
     function userZip() {
         var zip = $("#zip").val();
@@ -42,38 +41,23 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (response) {
-            // console.log(response);
             var lat = response.results[0].geometry.location.lat;
             var lng = response.results[0].geometry.location.lng;
-            
             userLat.push(lat);
             userLng.push(lng);
-
-            // console.log(userLat);
-            // console.log(userLng);
         });
-    }
+    };
 
     function userPricePref(e) {
         e.preventDefault();
-        // grabs user price choice 
-        // var newUserPricePref = $(this).attr("value");
-        // push to global variable
         userPricePrefChoice = $(this).attr("value");
-
-        // console.log("this is the user price range: " + userPricePrefChoice);
     }
 
     function userDistancePref(e) {
         e.preventDefault();
-        // grabs user distance choice
-        //  var newUserDistancePrefChoice = $(this).attr("value");
         userDistancePrefChoice = $(this).attr("value");
-        // console.log("this is the user distance preference: " + userDistancePrefChoice + " in meters (place api uses meters as length parameter)");
-
     }
     function diningSuggestion(e) {
-        // e.preventDefault();
        
         //proxy server to avoid CORS Error
         var proxy = "https://cors-anywhere.herokuapp.com/";
@@ -81,8 +65,6 @@ $(document).ready(function () {
         //var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU";
         // var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.5383,81.3792&radius=160000&type=restaurant&keyword=" + userCuisineChoice + "&key=AIzaSyB89xW_iR3r4Jxih4DUu_Qz0QePc8sPWfU"
         var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,reviews[],opening_hours,rating,price_level=" + userPricePref + "&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=" + apiKey;
-
-        // var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId[0] + "&fields=name,review,formatted_phone_number&key=" + apiKey;
         
         $.ajax({
             url: queryURL,
@@ -103,38 +85,39 @@ $(document).ready(function () {
             var name = $("<h1>").text(response.results[randNumb].name);
             var rating = $("<h3>").text("Rating: " + response.results[randNumb].rating + "!");
             var address = $("<h4>").text("Address: " + response.results[randNumb].vicinity);
-            // var photo = $("<img src='" + response.results[randNumb].photos[0] + "'/>");
-            // address.append(photo);
-            rating.append(address);
-            name.append(rating);
-
-            // var reviews = 
-            // suggestedChoice.append(name);
+            var photos = $("<img src='" + response.results[randNumb].photos[0] + "'/>");
+        
+                address.append(photos);
+                rating.append(address);
+                name.append(rating);
+            
             $("#result").append(name);
             $("#third-page").show();
         });
     };
 
-    function photo () { 
+    function photo() { 
 
-        var proxy = "https://cors-anywhere.herokuapp.com/";
-        var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
-        var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId[0] + "&fields=name,review,formatted_phone_number&key=" + apiKey;
+        // var photos = place.photos
 
-        $.ajax({
-            url: queryURL2,
-            method: "GET",
-        }).then(function (response) {
-            console.log(response);
+        // var proxy = "https://cors-anywhere.herokuapp.com/";
+        // var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
+        // var queryURL4 = proxy + "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA2ABD0Awjf3I0HIdtLbIhuLbfIjYkwKIaruhulr_hpfLid-cAV-bXer0h-oBbaiA8GYOuLnKm9FP4WQOmpgasGF8PB4YYX_jtRr2AglO5UZcqLi646-EHo8wrKjuKIElREhA815XTXS1dywpSG4CnGX7kGhRzBZ24yBHQsg4YWIcKYC3-R9bQ6A&key=" + apiKey;
+
+        // $.ajax({
+        //     url: queryURL4,
+        //     method: "GET",
+        // }).then(function (response) {
+        //     console.log(response);
+        //     $("#results").append(response);
             
-
-            // console.log(sugPlaceId);
-        });
+            
+            
+        // });
     };
 
 
-    function review () {
-
+    function review() {
         var proxy = "https://cors-anywhere.herokuapp.com/";
         var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
         var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId[0] + "&fields=name,review,formatted_phone_number&key=" + apiKey;
@@ -149,8 +132,6 @@ $(document).ready(function () {
 
                 $("#modalReviews").append(pastReviews);
             };
-
-            // console.log(sugPlaceId);
         });
     };
 
@@ -162,7 +143,7 @@ $(document).ready(function () {
     //     });
     // };
 
-    function map () {
+    function map() {
 
         // var sugRestaurant = "Pei Wei";
         // var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
@@ -200,14 +181,14 @@ $(document).ready(function () {
     $("#submit").on("click", function(e) {
         e.preventDefault();
         userZip();
-        console.log(userCuisineChoice);
-        console.log(userLat);
-        console.log(userLng);
+        // console.log(userCuisineChoice);
+        // console.log(userLat);
+        // console.log(userLng);
         //$("#cuisineBttn").hide();
         //$("#zipBox").hide();
         $("#first-page").hide();
         $("#second-page").show();
-        console.log("Cuisine and zip code entered");
+        // console.log("Cuisine and zip code entered");
     });
     $(".btn-medium").on("click", userPricePref);
     $(".btn-small").on("click", userDistancePref);
@@ -215,9 +196,10 @@ $(document).ready(function () {
     //when user clicks button on pg 2 to get suggestions, pg 2 hides, pg 3 shows up
     $("#price-submit").on("click", function(e) {
         e.preventDefault();
-        console.log(userPricePrefChoice);
-        console.log(userDistancePrefChoice);
+        // console.log(userPricePrefChoice);
+        // console.log(userDistancePrefChoice);
         diningSuggestion();
+        // photo();
         $("#second-page").hide();
         // $("#third-page").show();
     });
@@ -226,8 +208,8 @@ $(document).ready(function () {
         review();
         $("#modalReviews").show();
     });
-    // $("#map").on("click", function(e) {
-    //     e.preventDefault();
-    //     map();
-    // });
+    $("#map").on("click", function(e) {
+        e.preventDefault();
+        // map();
+    });
 });
