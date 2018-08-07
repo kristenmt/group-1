@@ -117,6 +117,15 @@ $(document).ready(function () {
         // });
     };
     function review() {
+        $(document).ajaxStart(function () {
+            $(".preloader-wrapper").hide();
+            // $("#wait").css("display", "block");
+        });
+        $(document).ajaxComplete(function () {
+            $(".preloader-wrapper").hide();
+            $("#third-page").show();
+            // $("#wait").css("display", "none");
+        });
         var proxy = "https://cors-anywhere.herokuapp.com/";
         var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
         var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId + "&fields=name,review,formatted_phone_number&key=" + apiKey;
