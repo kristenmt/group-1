@@ -160,11 +160,11 @@ input{
     
 }
 #zipBox {
-background-color: orangered;
-color:white;
-font-weight: bolder;
-margin: 0px 0px 30px 350px;
+
+margin: 0px 0px 30px 243px;
 }
+
+
 .material-icons-prices {
     text-shadow: 1px 1px 2px black;
     font-family: 'Quicksand', sans-serif;
@@ -230,6 +230,9 @@ margin: 0px 0px 30px 350px;
 #myModalMap {
     height: 400px;
     padding: 20px;
+}
+#price-submit{
+    margin: 0px 0px 0px 92px;
 }
 /*Iphones (320px and up)*/
 @media only screen and (min-width: 320px) {
@@ -357,14 +360,15 @@ margin: 0px 0px 30px 350px;
         padding: 0px 0px 0px 100px;
     }
     #distBtn {
-        padding: 0px 0px 0px 300px;
+        padding: 0px 0px 0px 329px;
     }
     #priceBtn {
-        padding: 0px 0px 0px 300px;
+        padding: 0px 0px 0px 329px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 300px;
+        padding: 0px 0px 0px 370px;
     }
+
 }
 
 

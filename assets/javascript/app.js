@@ -134,7 +134,7 @@ $(document).ready(function () {
         var myLatLng = { lat: respLat, lng: respLng }
         map = new google.maps.Map(document.getElementById('myModalMap'), {
             center: myLatLng,
-            zoom: 15
+            zoom: 20
         });
         var marker = new google.maps.Marker({
             position: myLatLng,
