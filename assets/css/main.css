@@ -118,6 +118,18 @@ input{
 #price-submit{
     font-family: 'Quicksand', sans-serif;
 }
+
+/*reviews modal*/
+.btn-floating.btn-xlarge:hover{
+    background-color: black;
+    color: white;
+}
+.btn-floating.btn-xlarge:active{
+    color: white;
+}
+.btn-floating.btn-xlarge{
+    color: white;
+}
 /*results page buttons*/
 .btn-floating.btn-xlarge {
     width: 80px;
@@ -187,6 +199,9 @@ margin: 0px 0px 30px 350px;
     line-height: 35px;
     font-family: 'Quicksand', sans-serif;
 }
+.preloader-wrapper {
+    margin-left: 450px;
+}
 /*Iphones (320px and up)*/
 @media only screen and (min-width: 320px) {
     a.brand-logo.white-text {
@@ -223,7 +238,7 @@ margin: 0px 0px 30px 350px;
         padding: 0px 0px 0px 0px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 40px;
     }
 }
 
@@ -243,7 +258,7 @@ margin: 0px 0px 30px 350px;
         padding: 0px 0px 0px 80px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 80px;
+        padding: 0px 0px 0px 140px;
     }
     
 }
@@ -263,7 +278,7 @@ margin: 0px 0px 30px 350px;
         padding: 0px 0px 0px 130px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 130px;
+        padding: 0px 0px 0px 200px;
     }
     
 } 
@@ -283,13 +298,13 @@ margin: 0px 0px 30px 350px;
         padding: 0px 0px 0px 230px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 230px;
+        padding: 0px 0px 0px 300px;
     }
 } 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     a.brand-logo.white-text {
-        margin-left: -20px;
+        margin-left: 10px;
         
     }
     #cuisineBttn {
@@ -302,7 +317,7 @@ margin: 0px 0px 30px 350px;
         padding: 0px 0px 0px 230px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 230px;
+        padding: 0px 0px 0px 300px;
     }
 }
 /*Extra-Extra large screen (1440px)*/
@@ -321,7 +336,7 @@ margin: 0px 0px 30px 350px;
         padding: 0px 0px 0px 300px;
     }
     #resultsBtn {
-        padding: 0px 0px 0px 300px;
+        padding: 0px 0px 0px 350px;
     }
 }
 

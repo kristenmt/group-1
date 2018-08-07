@@ -34,7 +34,7 @@ $(document).ready(function () {
     function userZip() {
         var zip = $("#zip").val();
         var queryURL = "http://maps.googleapis.com/maps/api/geocode/json?address=" + zip;
-        
+
         $.ajax({
             url: queryURL,
             method: "GET",
@@ -42,7 +42,7 @@ $(document).ready(function () {
             // console.log(response);
             var lat = response.results[0].geometry.location.lat;
             var lng = response.results[0].geometry.location.lng;
-            
+
             userLat.push(lat);
             userLng.push(lng);
 
@@ -71,7 +71,7 @@ $(document).ready(function () {
     }
     function diningSuggestion(e) {
         // e.preventDefault();
-       
+
         //proxy server to avoid CORS Error
         var proxy = "https://cors-anywhere.herokuapp.com/";
         var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
@@ -81,14 +81,14 @@ $(document).ready(function () {
 
         var queryURL2 = proxy + "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + sugPlaceId + "&key=" + apiKey;
         var sugPlaceId = [];
-        
+
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
             // console.log(response);
             ///======push our respone into an array select from 
-            randArray.push(response.results) 
+            randArray.push(response.results)
             // console.log(randArray);
             //======= function to go through the array and select a random result
             var randNumb = Math.floor((Math.random() * response.results.length) + 1);
@@ -107,23 +107,54 @@ $(document).ready(function () {
             // suggestedChoice.append(name);
             $("#result").append(name);
             $("#third-page").show();
-            $("#reviews").on("click", function(){
-            $("#reviews-modal").show();
-            });
         });
+
+      
 
         $.ajax({
             url: queryURL2,
             method: "GET",
-        }).then(function(response) {
+        }).then(function (response) {
             console.log(response);
             console.log(sugPlaceId);
         });
 
+          //Show the spinLoader
+        // Binds to the global ajax scope
+        $(document).ajaxStart(function () {
+            $("#spinLoader").show();
+        });
+        
+        //Hide the spinLoader
+        $(document).ajaxComplete(function () {
+            $("#spinLoader").hide();
+        });
+
+
+        // document.querySelector("#third-page").style.display = "none";
+        // document.querySelector(".spinLoader").classList.add(".pre-loader-wrapper");
+        // document.querySelector(".pre-loader-wrapper").classList.add(".spinner-layer");
+
+
+        // $("#price-submit").on("click", function (e) {
+        //     e.preventDefault();
+        //     // review();
+        //     $(".spinLoader").show();
+        // });
+        // Hide the spinLoader after ALL elements have loaded
+        // $("#").load(function (e) {
+        //     e.preventDefault();
+        //     // review();
+        //     $("#spinLoader").hide();
+        // });
+        // $(window).load(function() {
+        //     $("#spinLoader").hide();
+        // });
+
     }
     $(".btn-large").on("click", userCuisine);
     //when user adds cuisine and zip code and clicks submit, pg 1 hides, pg 2 shows up
-    $("#submit").on("click", function(e) {
+    $("#submit").on("click", function (e) {
         e.preventDefault();
         userZip();
         console.log(userCuisineChoice);
@@ -139,7 +170,7 @@ $(document).ready(function () {
     $(".btn-small").on("click", userDistancePref);
     // $(".btn-xlarge").on("click", diningSuggestion);
     //when user clicks button on pg 2 to get suggestions, pg 2 hides, pg 3 shows up
-    $("#price-submit").on("click", function(e) {
+    $("#price-submit").on("click", function (e) {
         e.preventDefault();
         console.log(userPricePrefChoice);
         console.log(userDistancePrefChoice);
@@ -147,4 +178,34 @@ $(document).ready(function () {
         $("#second-page").hide();
         // $("#third-page").show();
     });
+
+
+
+
+    //Show the review modal
+    $("#reviews").on("click", function (e) {
+        e.preventDefault();
+        // review();
+        $("#modalReviews").show();
+    });
+    //Hide the reviews modal
+    $("#reviewsBack").on("click", function (e) {
+        e.preventDefault();
+        // review();
+        $("#modalReviews").hide();
+    });
+
+    //Show the Map modal
+    $("#map").on("click", function (e) {
+        e.preventDefault();
+        // review();
+        $("#modalMap").show();
+    });
+    //Hide the Map modal
+    $("#mapBack").on("click", function (e) {
+        e.preventDefault();
+        // review();
+        $("#modalMap").hide();
+    });
+
 });

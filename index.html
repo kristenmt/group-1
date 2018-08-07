@@ -24,7 +24,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo white-text">RANDOM RESTAURANT</a>
+            <a href="index.html" class="brand-logo white-text">FOOD FIGHTERS</a>
         </div>
     </nav>
     <!--First page showing-->
@@ -147,79 +147,86 @@
                 </div>
             </div>
         </div>
+    
+       
+
         <!-- suggestion page -->
         <div id="third-page">
+            <!--Spin Loader-->
+            <div id="spinLoader">
+                <h3>Please Wait...</h3>
+                <div class = "preloader-wrapper big active">
+                   <div class = "spinner-layer spinner-yellow-only">
+                      <div class = "circle-clipper left">
+                         <div class = "circle"></div>
+                      </div>
+                      
+                      <div class = "gap-patch">
+                         <div class = "circle"></div>
+                      </div>
+                      
+                      <div class = "circle-clipper right">
+                         <div class = "circle"></div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+
             <div class="row">
+             
                 <div id="sug-text" class="col-sm-12 col-md-12 col-lg-12">
                     <h3>OUR SUGGESTION:</h3>
                 </div>
             </div>
+            <!--Reviews Modal-->
+            <div id="modalReviews" class="modal">
+                <div class="modal-content">
+                    <h4>Reviews</h4>
+                    <!-- <p>IMG</p>  -->
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="reviewsBack">back</a>
+                </div>
+            </div>
+            <!--Map Modal-->
+            <div id="modalMap" class="modal">
+                <div class="modal-content">
+                    <h4>Map</h4>
+                    <!-- <p>IMG</p> -->
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="mapBack">back</a>
+                </div>
+            </div>
+            
             <div class="row">
-                <div id="result" class="col-sm-12 col-md-6 col-lg-12">
+                <div id="result" class="col-sm-12 col-md-12 col-lg-12">
                     <!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x200"></a> -->
                 </div>
             </div>
             <div class="row">
                 <div id="resultsBtn">
-                    <div class="col-sm-12 col-md-6 col-lg-12">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
                         <a class="btn-floating btn-xlarge waves-effect waves-light red" id="reviews" href="#modalReviews">
                             <p class="material-icons-review">Reviews?</p>
                         </a>
-                        <!--Reviews Modal-->
-                        <div id="modalReviews" class="modal">
-                            <div class="modal-content">
-                                <h4>Reviews</h4>
-                                <!-- <p>IMG</p>  -->
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">back</a>
-                            </div>
-                        </div>
+                        
                         &nbsp
-                        <a class="btn-floating btn-xlarge waves-effect waves-light red" href="#modalMap">
+                        <a class="btn-floating btn-xlarge waves-effect waves-light red" id="map" href="#modalMap">
                             <p class="material-icons-sug">Map</p>
                         </a>
-                        <!--Map Modal-->
-                        <div id="modalMap" class="modal">
-                            <div class="modal-content">
-                                <h4>Map</h4>
-                                <!-- <p>IMG</p> -->
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">back</a>
-                            </div>
-                        </div>
+                        
                         &nbsp
                         <a class="btn-floating btn-xlarge waves-effect waves-light red" href="modalNah">
                             <p class="material-icons-sug">Nah</p>
                         </a>
-                        <!--Nah Modal-->
-                        <div id="modalNah" class="modal">
-                            <div class="modal-content">
-                                <h4>Next Selection</h4>
-                                <!-- <p>IMG</p> -->
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">back</a>
-                            </div>
-                        </div>
-                        &nbsp
-                        <a class="btn-floating btn-medium waves-effect waves-light red" href="modalHate">
-                            <p class="material-icons-sug">Hate!</p>
-                        </a>
-                        <!--Hate Modal-->
-                        <div id="modalHate" class="modal">
-                            <div class="modal-content">
-                                <h4>Saved!</h4>
-                                <p>Got it! We won't suggest this place again.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">back</a>
-                            </div>
-                        </div>
+                      
+                        
+                      
                     </div>
                 </div>
             </div>
+        
         </div>
     </div>
     <!-- JavaScript  -->
