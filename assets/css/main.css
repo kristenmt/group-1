@@ -92,9 +92,10 @@ nav .brand-logo{
 #distBtn{
     margin: 0px 0px 0px 304px;
 }
-/* #resultsBtn{
+
+#resultsBtn{
     margin: 0px 0px 0px 372px;
-} */
+}
 .brand-logo:focus{
         background-color: black;
         color: white;
