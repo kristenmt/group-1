@@ -149,6 +149,7 @@ $(document).ready(function () {
     function review() {
         // hides preloader element while this ajax request is being made so that it does not move elements around on the page while this request is being fetched
         $(document).ajaxStart(function () {
+            //preloader hide
             $(".preloader-wrapper").hide();
         });
         
