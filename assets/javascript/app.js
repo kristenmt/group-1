@@ -73,7 +73,7 @@ $(document).ready(function () {
 
         //proxy server to avoid CORS Error
         var proxy = "https://cors-anywhere.herokuapp.com/";
-        var apiKey = "AIzaSyChlPJLAb8RprOEJSaNR45xofPCnhLRJk8";
+        var apiKey = "AIzaSyBtKj-tArTQ4Po2orxslb5AKe2v-7mcG90";
         var queryURL = proxy + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&keyword=" + userCuisineChoice + "&fields=photos,formatted_address,name,reviews[],opening_hours,rating,price_level=" + userPricePref + "&location=" + userLat + "," + userLng + "&radius=" + userDistancePrefChoice + "&key=" + apiKey;
 
         // ajax request to obtain restaurant details based on queryURL paramaters which are set by captured user inputs
